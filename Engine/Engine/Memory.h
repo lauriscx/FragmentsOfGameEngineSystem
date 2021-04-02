@@ -60,26 +60,27 @@ namespace Memory {
 	 * together you can see in console printing
 	 * meory alocation and releasion operations.
 	*/
-	#ifdef DEBUG && MEMORY_LEAK
-
-		std::map<void*, size_t> m_PointersMemoryMap;
-
-		void * operator new(size_t size) {
-			std::cout << "Allocated memory " << size << std::endl;
-			void * p = ::operator new(size);
-			//void * p = malloc(size); will also work fine
-			m_PointersMemoryMap[p] = size;//Add to map pointer and memory allocation.
-
-			return p;
-		}
-
-		void operator delete(void * p) {
-			m_PointersMemoryMap.erase(p);
-
-			std::cout << "Releasing memory " << std::endl;
-			free(p);
-		}
-
-	#endif // DEBUG
-
 };
+#if defined(DEBUG) && defined(MEMORY_LEAK)
+
+	//std::map<void*, size_t> m_PointersMemoryMap;
+	size_t m_MemoryAllocated = 0;
+
+	void * operator new(size_t size) {
+		std::cout << "Allocated memory " << size << std::endl;
+		//void * p = ::operator new(size);
+		void * p = malloc(size); //will also work fine
+		//m_PointersMemoryMap[p] = size;//Add to map pointer and memory allocation.
+		m_MemoryAllocated += size;
+
+		return p;
+	}
+
+	void operator delete(void * p) {
+		//m_PointersMemoryMap.erase(p);
+
+		std::cout << "Releasing memory " << std::endl;
+		free(p);
+	}
+
+#endif // DEBUG

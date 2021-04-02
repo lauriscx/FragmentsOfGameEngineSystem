@@ -1,6 +1,6 @@
-/*#define DEBUG
+#define DEBUG
 #define MEMORY_LEAK
-#include "Memory.h"*/
+#include "Memory.h"
 
 
 class Entyti
@@ -18,7 +18,7 @@ int main() {
 	{
 		int d = 2;
 
-		//Memory::Reference<Entyti> ent = Memory::CreateReference<Entyti>();
+		Memory::Reference<Entyti> ent = Memory::CreateReference<Entyti>();
 	
 		int a = 45;
 	}
