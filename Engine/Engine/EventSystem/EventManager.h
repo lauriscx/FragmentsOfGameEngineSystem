@@ -1,5 +1,6 @@
 #pragma once
 #include <map>
+#include <vector>
 
 class EventHandler;
 
@@ -16,7 +17,10 @@ protected://Using this functions only EventHandler class.
 	void UnSurscribe(EventHandler* eventHandler);
 
 public:
-	void SendEvent	(BasicEvent* event);
+	void SendEvent		(BasicEvent* event);
+	void SendEventNow	(BasicEvent* event);
+
+	void Update();
 
 private:
 	~EventManager() { m_EventHandlerEvents.clear(); }
@@ -24,6 +28,7 @@ private:
 	EventManager& operator=(const EventManager& eventmanager) {}
 
 	std::multimap<int, EventHandler*> m_EventHandlerEvents;
+	std::vector<BasicEvent*> m_Events;
 
 	friend EventHandler;
 };

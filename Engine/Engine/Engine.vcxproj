@@ -115,9 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="EventSystem\Event.h" />
+    <ClInclude Include="EventSystem\EventHandler.h" />
+    <ClInclude Include="EventSystem\EventManager.h" />
     <ClInclude Include="Memory.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EventSystem\EventHandler.cpp" />
+    <ClCompile Include="EventSystem\EventManager.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
