@@ -39,6 +39,12 @@
     <ClInclude Include="FileSystem.h">
       <Filter>FileSystem</Filter>
     </ClInclude>
+    <ClInclude Include="VFS.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="DataTypes.h">
+      <Filter>FileSystem</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EventSystem\EventHandler.cpp">
@@ -56,8 +62,9 @@
     <ClCompile Include="Source.cpp">
       <Filter>Main test</Filter>
     </ClCompile>
-    <ClCompile Include="FileSystem.cpp">
+    <ClCompile Include="VFS.cpp">
       <Filter>FileSystem</Filter>
     </ClCompile>
+    <ClCompile Include="FileSystem.cpp" />
   </ItemGroup>
 </Project>

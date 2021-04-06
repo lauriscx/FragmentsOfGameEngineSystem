@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataTypes.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EventSystem\Event.h" />
     <ClInclude Include="EventSystem\EventHandler.h" />
@@ -130,6 +131,7 @@
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="Memory.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="VFS.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
@@ -138,6 +140,7 @@
     <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="VFS.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
